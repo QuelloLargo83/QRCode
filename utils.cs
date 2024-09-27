@@ -26,7 +26,7 @@ namespace QRCode
                 //Set value to encode
                 bc.Code = code;
                 //Generate barcode image and get buffer
-                byte[] barcodeBuffer = bc.GetBarcodeImage(SKEncodedImageFormat.Png);
+                byte[] barcodeBuffer = bc.GetBarcodeImage(SKEncodedImageFormat.Png,800);
 
                 bc.Save(fileImage, SKEncodedImageFormat.Png);
 

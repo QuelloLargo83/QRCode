@@ -18,6 +18,7 @@ namespace QRCode
         public Form1()
         {
             InitializeComponent();
+            this.Text = "QRCoder"; // titolo finestra
         }
 
         private void CreateQRBTN_Click(object sender, EventArgs e)
