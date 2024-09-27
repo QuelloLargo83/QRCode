@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Neodynamic.SDK.BarcodeCore;
 
 namespace QRCode
 {
@@ -13,19 +14,19 @@ namespace QRCode
         /// <summary>
         /// Codifica una stringa e la converte in un file immagine sul disco
         /// </summary>
-        /// <param name="code"></param>
-        /// <param name="fileImage"></param>
+        /// <param name="code">codice da tradurre in qrcode</param>
+        /// <param name="fileImage">percorso completo del file qr da salvare</param>
         public static void CreateImage(string code, string fileImage)
         {
             //Create an instance of BarcodeProfessional class
-            using (Neodynamic.SDK.BarcodeCore.BarcodeProfessional bc = new Neodynamic.SDK.BarcodeCore.BarcodeProfessional())
+            using (BarcodeProfessional bc = new BarcodeProfessional())
             {
                 //Set the desired barcode type or symbology
-                bc.Symbology = Neodynamic.SDK.BarcodeCore.Symbology.QRCode;
+                bc.Symbology = Symbology.QRCode;
                 //Set value to encode
                 bc.Code = code;
                 //Generate barcode image and get buffer
-                byte[] barcodeBuffer = bc.GetBarcodeImage(SkiaSharp.SKEncodedImageFormat.Png);
+                byte[] barcodeBuffer = bc.GetBarcodeImage(SKEncodedImageFormat.Png);
 
                 bc.Save(fileImage, SKEncodedImageFormat.Png);
 

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Neodynamic.SDK.BarcodeCore;
+
 using SkiaSharp;
 
 namespace QRCode
@@ -24,7 +24,14 @@ namespace QRCode
         {
             var fileImage = @"C:\TEMP\qrcode.png";
             Utils.CreateImage(this.textBox1.Text, fileImage);
-            this.pictureBox1.Image = Image.FromFile(fileImage);
+          
+            // carico immagine senza bloccare il file
+            using (var fs = new System.IO.FileStream(fileImage, System.IO.FileMode.Open))
+            {
+                var bmp = new Bitmap(fs);
+                this.pictureBox1.Image = (Bitmap)bmp.Clone();
+            }
+
         }
 
     }
