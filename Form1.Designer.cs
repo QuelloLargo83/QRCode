@@ -37,16 +37,16 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(16, 133);
+            this.pictureBox1.Location = new System.Drawing.Point(20, 133);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(226, 166);
+            this.pictureBox1.Size = new System.Drawing.Size(215, 181);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // CreateQRBTN
             // 
-            this.CreateQRBTN.Location = new System.Drawing.Point(92, 79);
+            this.CreateQRBTN.Location = new System.Drawing.Point(90, 79);
             this.CreateQRBTN.Name = "CreateQRBTN";
             this.CreateQRBTN.Size = new System.Drawing.Size(75, 23);
             this.CreateQRBTN.TabIndex = 1;
@@ -56,7 +56,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(79, 36);
+            this.textBox1.Location = new System.Drawing.Point(77, 36);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 2;
@@ -74,7 +74,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(268, 330);
+            this.ClientSize = new System.Drawing.Size(250, 327);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.CreateQRBTN);

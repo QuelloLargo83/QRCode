@@ -23,15 +23,19 @@ namespace QRCode
 
         private void CreateQRBTN_Click(object sender, EventArgs e)
         {
-            var fileImage = @"C:\TEMP\qrcode.png";
-            Utils.CreateImage(this.textBox1.Text, fileImage);
-          
+            //var fileImage = @"C:\TEMP\qrcode.png";
+            var QRcodeImage = Utils.CreateImage(this.textBox1.Text);
+
+            var QRcodeImageResized = Utils.ResizeImage(QRcodeImage,pictureBox1.Width,pictureBox1.Height);
+
+            this.pictureBox1.Image = QRcodeImageResized;
+
             // carico immagine senza bloccare il file
-            using (var fs = new System.IO.FileStream(fileImage, System.IO.FileMode.Open))
-            {
-                var bmp = new Bitmap(fs);
-                this.pictureBox1.Image = (Bitmap)bmp.Clone();
-            }
+            //using (var fs = new System.IO.FileStream(fileImage, System.IO.FileMode.Open))
+            //{
+            //    var bmp = new Bitmap(fs);
+            //    this.pictureBox1.Image = (Bitmap)bmp.Clone();
+            //}
 
         }
 
