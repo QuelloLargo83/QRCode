@@ -13,12 +13,14 @@ using SkiaSharp;
 
 namespace QRCode
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             this.Text = "QRCoder"; // titolo finestra
+            
+
         }
 
         private void CreateQRBTN_Click(object sender, EventArgs e)
@@ -30,6 +32,10 @@ namespace QRCode
 
             this.pictureBox1.Image = QRcodeImageResized;
 
+            LoggerGraphic MainLog = new LoggerGraphic();
+            MainLog.PrintLog("Creato QR code");
+
+
             // carico immagine senza bloccare il file
             //using (var fs = new System.IO.FileStream(fileImage, System.IO.FileMode.Open))
             //{
@@ -39,5 +45,10 @@ namespace QRCode
 
         }
 
+        private void LogButton_Click(object sender, EventArgs e)
+        {
+            SecondaryForm LoggerForm = new SecondaryForm();
+            LoggerForm.ShowDialog();
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace QRCode
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,6 +32,7 @@
             this.CreateQRBTN = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.LogButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,17 +71,28 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Inserisci testo";
             // 
-            // Form1
+            // LogButton
+            // 
+            this.LogButton.Location = new System.Drawing.Point(90, 360);
+            this.LogButton.Name = "LogButton";
+            this.LogButton.Size = new System.Drawing.Size(75, 23);
+            this.LogButton.TabIndex = 4;
+            this.LogButton.Text = "LogPage";
+            this.LogButton.UseVisualStyleBackColor = true;
+            this.LogButton.Click += new System.EventHandler(this.LogButton_Click);
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(250, 327);
+            this.ClientSize = new System.Drawing.Size(268, 419);
+            this.Controls.Add(this.LogButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.CreateQRBTN);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "MainForm";
+            this.Text = "Main";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -93,6 +105,7 @@
         private System.Windows.Forms.Button CreateQRBTN;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button LogButton;
     }
 }
 
