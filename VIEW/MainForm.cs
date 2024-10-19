@@ -19,6 +19,7 @@ namespace QRCode
         {
             InitializeComponent();
             this.Text = "QRCoder"; // titolo finestra
+            this.BackColor = Global.BackGroundColor;
 
         }
 

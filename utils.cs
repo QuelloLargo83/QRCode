@@ -9,6 +9,7 @@ using Neodynamic.SDK.BarcodeCore;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
+using System.Security.Policy;
 
 namespace QRCode
 {
@@ -21,28 +22,42 @@ namespace QRCode
         /// <param name="fileImage">percorso completo del file qr da salvare</param>
         public static Image CreateImage(string code, string fileImage = @"C\TEMP\qrcode.png", bool savetodisk = false)
         {
-            //Create an instance of BarcodeProfessional class
-            using (BarcodeProfessional bc = new BarcodeProfessional())
+
+            string cwd = Directory.GetCurrentDirectory();
+            Image _retImage = Image.FromFile(cwd + "/Pictures/blankCode.bmp"); //immagine di default se non viene inserito nulla
+
+            try
             {
-                //Set the desired barcode type or symbology
-                bc.Symbology = Symbology.QRCode;
-                //Set value to encode
-                bc.Code = code;
-                //Generate barcode image and get buffer
-                byte[] barcodeBuffer = bc.GetBarcodeImage(SKEncodedImageFormat.Png,800);
-
-                if (savetodisk)
-                {   //salvo sul disco
-                    bc.Save(fileImage, SKEncodedImageFormat.Png);
-                }
-
-
-                using (var ms = new MemoryStream(barcodeBuffer))
+                //Create an instance of BarcodeProfessional class
+                using (BarcodeProfessional bc = new BarcodeProfessional())
                 {
-                    return Image.FromStream(ms);
-                }
+                    //Set the desired barcode type or symbology
+                    bc.Symbology = Symbology.QRCode;
+                    //Set value to encode
+                    bc.Code = code;
+                    //Generate barcode image and get buffer
+                    byte[] barcodeBuffer = bc.GetBarcodeImage(SKEncodedImageFormat.Png, 800);
 
+                    if (savetodisk)
+                    {   //salvo sul disco
+                        bc.Save(fileImage, SKEncodedImageFormat.Png);
+                    }
+
+
+                    using (var ms = new MemoryStream(barcodeBuffer))
+                    {
+                        _retImage = Image.FromStream(ms);
+                    }
+
+                }
             }
+            catch (Exception ex) 
+            {   
+                Global.LoggerFrm.LoggerAddItem(ex.Message);
+                
+            }
+
+            return _retImage;
         }
 
 

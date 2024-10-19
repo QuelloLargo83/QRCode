@@ -19,10 +19,14 @@ namespace QRCode
         {
             InitializeComponent();
 
+            this.BackColor = Global.BackGroundColor;
+
             // Formattazione tabella logger
             dt.Columns.Add("Date");
             dt.Columns.Add("Content");
+
         }
+
 
         /// <summary>
         /// aggiunge una string alla tabella del log

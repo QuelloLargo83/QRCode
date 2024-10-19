@@ -59,22 +59,22 @@
   <ItemGroup>
     <Compile Include="Global.cs" />
     <Compile Include="Logger.cs" />
-    <Compile Include="SecondaryForm.cs">
+    <Compile Include="VIEW\SecondaryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SecondaryForm.Designer.cs">
+    <Compile Include="VIEW\SecondaryForm.Designer.cs">
       <DependentUpon>SecondaryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="utils.cs" />
-    <Compile Include="MainForm.cs">
+    <Compile Include="VIEW\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="VIEW\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="VIEW\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -86,7 +86,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SecondaryForm.resx">
+    <EmbeddedResource Include="VIEW\SecondaryForm.resx">
       <DependentUpon>SecondaryForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -103,6 +103,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Pictures\blankCode.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\SkiaSharp.1.60.0\build\net45\SkiaSharp.targets" Condition="Exists('packages\SkiaSharp.1.60.0\build\net45\SkiaSharp.targets')" />
