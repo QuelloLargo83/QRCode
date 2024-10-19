@@ -24,7 +24,7 @@ namespace QRCode
 
         private void CreateQRBTN_Click(object sender, EventArgs e)
         {
-            //var fileImage = @"C:\TEMP\qrcode.png";
+        
             var QRcodeImage = Utils.CreateImage(this.textBox1.Text);
 
             var QRcodeImageResized = Utils.ResizeImage(QRcodeImage,pictureBox1.Width,pictureBox1.Height);
