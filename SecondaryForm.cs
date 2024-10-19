@@ -12,7 +12,7 @@ namespace QRCode
 {
     public partial class SecondaryForm : Form
     {
-        DataTable dt = new DataTable();
+        private DataTable dt = new DataTable();
 
 
         public SecondaryForm()
