@@ -13,12 +13,14 @@ namespace QRCode
         
     public class LoggerGraphic : Logger
     {
- 
+        
+        /// <summary>
+        /// Stampa il logger sul form del 
+        /// </summary>
+        /// <param name="content"></param>
         public void PrintLog(string content)
         {
-            SecondaryForm Log = new SecondaryForm();
-            Log.LoggerAddItem(content);
-            Log.ShowDialog();
+            Global.LoggerFrm.LoggerAddItem(content);
         }
 
     }

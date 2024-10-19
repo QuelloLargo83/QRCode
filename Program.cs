@@ -8,6 +8,8 @@ namespace QRCode
 {
     internal static class Program
     {
+        
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -17,8 +19,8 @@ namespace QRCode
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
+   
 
-       
         }
     }
 }

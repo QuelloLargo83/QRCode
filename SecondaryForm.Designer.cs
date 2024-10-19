@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.LOGGERdataGridView = new System.Windows.Forms.DataGridView();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.LOGGERdataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,11 +41,20 @@
             this.LOGGERdataGridView.Size = new System.Drawing.Size(776, 426);
             this.LOGGERdataGridView.TabIndex = 0;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(12, 469);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 1;
+            // 
             // SecondaryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(817, 592);
+            this.ClientSize = new System.Drawing.Size(817, 661);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.LOGGERdataGridView);
             this.Name = "SecondaryForm";
             this.Text = "Logger";
@@ -56,5 +66,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView LOGGERdataGridView;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

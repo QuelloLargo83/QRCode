@@ -19,7 +19,6 @@ namespace QRCode
         {
             InitializeComponent();
             this.Text = "QRCoder"; // titolo finestra
-            
 
         }
 
@@ -33,22 +32,14 @@ namespace QRCode
             this.pictureBox1.Image = QRcodeImageResized;
 
             LoggerGraphic MainLog = new LoggerGraphic();
-            MainLog.PrintLog("Creato QR code");
+            MainLog.PrintLog("Creato QR code : " + this.textBox1.Text);
 
-
-            // carico immagine senza bloccare il file
-            //using (var fs = new System.IO.FileStream(fileImage, System.IO.FileMode.Open))
-            //{
-            //    var bmp = new Bitmap(fs);
-            //    this.pictureBox1.Image = (Bitmap)bmp.Clone();
-            //}
 
         }
 
         private void LogButton_Click(object sender, EventArgs e)
         {
-            SecondaryForm LoggerForm = new SecondaryForm();
-            LoggerForm.ShowDialog();
+            Global.LoggerFrm.ShowDialog();
         }
     }
 }
